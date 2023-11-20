@@ -39,7 +39,7 @@ const Home = () => {
         key: 'customer_id',
         align: 'center'
     }, {
-        title: 'Video',
+        title: 'Total report',
         dataIndex: 'video',
         key: 'video',
         align: 'center',
@@ -57,7 +57,7 @@ const Home = () => {
 
         }
     }, {
-        title: 'Photo',
+        title: 'Request',
         dataIndex: 'photo',
         key: 'photo',
         align: 'center',
