@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.master-data-container .list-tools {
+  margin-bottom: 10px;
+}
+.list-tools button {
+  margin-right: 5px;
+}
