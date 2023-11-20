@@ -20,7 +20,7 @@ const Home = () => {
 
     const handleGetListLogToday = async () => {
         const res = await getListLogsToday();
-        setDataLogs(res.data.data);
+        setDataLogs(res?.data?.data || []);
     }
     useEffect(() => {
         handleGetListLogToday();
@@ -43,7 +43,7 @@ const Home = () => {
         dataIndex: 'video',
         key: 'video',
         align: 'center',
-        sorter: (a, b) => a.video - b.video,
+        sorter: (a, b) => a?.video - b?.video,
         render: (video, log) => {
             if (localStorage.getItem("t")) {
                 return <>
