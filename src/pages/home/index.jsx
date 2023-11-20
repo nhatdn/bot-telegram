@@ -43,6 +43,7 @@ const Home = () => {
         dataIndex: 'video',
         key: 'video',
         align: 'center',
+        sorter: (a, b) => a.video - b.video,
         render: (video, log) => {
             if (localStorage.getItem("t")) {
                 return <>
