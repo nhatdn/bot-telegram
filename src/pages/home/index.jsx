@@ -43,7 +43,7 @@ const Home = () => {
         dataIndex: 'countVideo',
         key: 'countVideo',
         align: 'center',
-        sorter: (a, b) => a?.video - b?.video,
+        sorter: (a, b) => a?.countVideo - b?.countVideo,
         render: (video, log) => {
             if (localStorage.getItem("t")) {
                 return <>
