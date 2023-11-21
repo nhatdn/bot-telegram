@@ -26,30 +26,30 @@ const Home = () => {
         handleGetListLogToday();
     }, [])
 
-    const handleUpdateLog = (type, file, log_id) => {
+    const handleUpdateLog = (type, file, username) => {
         apiUpdateLogs({
             type,
             file,
-            log_id
+            username
         }).then(handleGetListLogToday);
     }
     const columns = [{
         title: 'User',
-        dataIndex: 'customer_id',
-        key: 'customer_id',
+        dataIndex: 'username',
+        key: 'username',
         align: 'center'
     }, {
         title: 'Total report',
-        dataIndex: 'video',
-        key: 'video',
+        dataIndex: 'countVideo',
+        key: 'countVideo',
         align: 'center',
         sorter: (a, b) => a?.video - b?.video,
         render: (video, log) => {
             if (localStorage.getItem("t")) {
                 return <>
-                    <Button onClick={() => handleUpdateLog("minus", "video", log.log_id)}>-</Button>
+                    <Button onClick={() => handleUpdateLog("minus", "video", log.username)}>-</Button>
                     <span style={{ width: 50, display: 'inline-block' }} >{video}</span>
-                    <Button onClick={() => handleUpdateLog("add", "video", log.log_id)}>+</Button>
+                    <Button onClick={() => handleUpdateLog("add", "video", log.username)}>+</Button>
                 </>
             } else {
                 return video
@@ -58,15 +58,15 @@ const Home = () => {
         }
     }, {
         title: 'Request',
-        dataIndex: 'photo',
-        key: 'photo',
+        dataIndex: 'countPhoto',
+        key: 'countPhoto',
         align: 'center',
         render: (photo, log) => {
             if (localStorage.getItem("t")) {
                 return <>
-                    <Button onClick={() => handleUpdateLog("minus", "photo", log.log_id)}>-</Button>
+                    <Button onClick={() => handleUpdateLog("minus", "photo", log.username)}>-</Button>
                     <span style={{ width: 50, display: 'inline-block' }}>{photo}</span>
-                    <Button onClick={() => handleUpdateLog("add", "photo", log.log_id)}>+</Button>
+                    <Button onClick={() => handleUpdateLog("add", "photo", log.username)}>+</Button>
                 </>
             } else {
                 return photo
